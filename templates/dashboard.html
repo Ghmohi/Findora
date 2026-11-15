@@ -1,0 +1,201 @@
+
+{% extends "base.html" %}
+
+{% block title %}My Dashboard | Findora{% endblock %}
+
+{% block content %}
+
+<section class="container">
+
+    <!-- DASHBOARD HEADER -->
+    <div class="dashboard-header">
+        <span class="hero-tag">STUDENT PORTAL</span>
+        <h1>Welcome back, {{ user.name if user else 'Student' }}! 👋</h1>
+        <p class="text-muted">
+            Keep track of your lost and found reports and claims.
+        </p>
+    </div>
+
+
+    <!-- SUMMARY CARDS -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="step-icon">📦</div>
+            <p>My Total Reports</p>
+            <h2>{{ total_reports|default(0) }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="step-icon">🔴</div>
+            <p>Lost Items</p>
+            <h2>{{ lost_count|default(0) }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="step-icon">🟢</div>
+            <p>Found Items</p>
+            <h2>{{ found_count|default(0) }}</h2>
+        </div>
+
+        <div class="stat-card">
+            <div class="step-icon">🤝</div>
+            <p>My Claims</p>
+            <h2>{{ claims_count|default(0) }}</h2>
+        </div>
+
+    </div>
+
+
+    <!-- QUICK ACTIONS -->
+    <div class="dashboard-actions">
+
+        <a href="/report?type=lost" class="btn btn-primary">
+            + Report Lost Item
+        </a>
+
+        <a href="/report?type=found" class="btn btn-outline">
+            + Report Found Item
+        </a>
+
+        <a href="/items" class="btn btn-outline">
+            Browse Items →
+        </a>
+
+    </div>
+
+
+    <!-- MY REPORTS -->
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>My Reports</h2>
+            <p>Items you have reported on Findora.</p>
+        </div>
+
+        {% if my_reports %}
+
+        <div class="items-grid">
+
+            {% for item in my_reports %}
+
+            <div class="item-card">
+
+                <div class="item-image">
+                    {% if item.image_url %}
+                        <img src="{{ item.image_url }}" alt="{{ item.title }}">
+                    {% else %}
+                        📦
+                    {% endif %}
+                </div>
+
+                <div class="item-details">
+
+                    {% if item.status == 'Lost' %}
+                        <span class="status-badge status-lost">Lost</span>
+                    {% elif item.status == 'Found' %}
+                        <span class="status-badge status-found">Found</span>
+                    {% elif item.status == 'Claim Pending' %}
+                        <span class="status-badge status-pending">Claim Pending</span>
+                    {% elif item.status == 'Recovered' %}
+                        <span class="status-badge status-recovered">Recovered</span>
+                    {% else %}
+                        <span class="status-badge status-closed">Closed</span>
+                    {% endif %}
+
+                    <h3>{{ item.title }}</h3>
+                    <p>📂 {{ item.category }}</p>
+                    <p>📍 {{ item.location }}</p>
+
+                    <a href="{{ url_for('item_detail', item_id=item.id) }}"
+                       class="btn btn-outline">
+                        View Details →
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+            <div>📋</div>
+            <h3>No reports yet</h3>
+            <p>Your reported items will appear here.</p>
+            <a href="/report" class="btn btn-primary">
+                Report Your First Item
+            </a>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- MY CLAIMS -->
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>My Claims</h2>
+            <p>Track the progress of items you have claimed.</p>
+        </div>
+
+        {% if my_claims %}
+
+        <div class="claims-list">
+
+            {% for claim in my_claims %}
+
+            <div class="claim-card">
+
+                <div>
+                    <h3>{{ claim.item_title }}</h3>
+                    <p class="text-muted">
+                        Claim ID: #{{ claim.id }}
+                    </p>
+                </div>
+
+                <div>
+                    {% if claim.status == 'Approved' %}
+                        <span class="status-badge status-recovered">
+                            Approved
+                        </span>
+                    {% elif claim.status == 'Rejected' %}
+                        <span class="status-badge status-lost">
+                            Rejected
+                        </span>
+                    {% else %}
+                        <span class="status-badge status-pending">
+                            Pending
+                        </span>
+                    {% endif %}
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty-state">
+            <div>🤝</div>
+            <h3>No claims submitted</h3>
+            <p>When you claim an item, its status will appear here.</p>
+            <a href="/items" class="btn btn-primary">
+                Explore Items
+            </a>
+        </div>
+
+        {% endif %}
+
+    </section>
+
+</section>
+
+{% endblock %}

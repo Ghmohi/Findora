@@ -1,0 +1,893 @@
+
+/* =================================
+   FINDORA - GLOBAL STYLES
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+    --primary: #5146E5;
+    --primary-dark: #4035C5;
+    --primary-light: #EEEDFF;
+    --background: #F7F8FC;
+    --surface: #FFFFFF;
+    --text: #20243A;
+    --muted: #777D91;
+    --border: #E8EAF1;
+    --success: #159B68;
+    --danger: #DC4C55;
+    --warning: #D99A25;
+    --info: #4385D8;
+    --radius: 14px;
+    --shadow: 0 5px 25px rgba(35, 39, 75, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* =================================
+   NAVIGATION BAR
+================================= */
+
+.navbar {
+    width: 100%;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: var(--primary);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* =================================
+   BUTTONS
+================================= */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    color: var(--primary);
+    border-color: var(--border);
+    background: white;
+}
+
+.btn-outline:hover {
+    background: var(--primary-light);
+}
+
+.btn-danger {
+    background: #FDEBEC;
+    color: var(--danger);
+}
+
+.btn-success {
+    background: #E6F7EF;
+    color: var(--success);
+}
+
+/* =================================
+   COMMON PAGE ELEMENTS
+================================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 28px;
+}
+
+.section {
+    margin: 55px 0;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    font-size: 27px;
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.text-muted {
+    color: var(--muted);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+    padding: 85px 28px;
+    background: linear-gradient(135deg, #F0EFFF, #F8F7FF, #E9F2FF);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 7px 14px;
+    background: white;
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1.8px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 520px;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.hero-visual .hero-emoji {
+    font-size: 100px;
+    margin-bottom: 15px;
+}
+
+/* =================================
+   ITEM CARDS
+================================= */
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.item-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: 0.25s;
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(35, 39, 75, 0.1);
+}
+
+.item-image {
+    height: 180px;
+    background: #F0F0FA;
+    display: grid;
+    place-items: center;
+    font-size: 65px;
+}
+
+.item-details {
+    padding: 20px;
+}
+
+.item-details h3 {
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.item-details p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* =================================
+   STATUS BADGES
+================================= */
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-lost {
+    background: #FDEBEC;
+    color: #CF3E49;
+}
+
+.status-found {
+    background: #E3F7ED;
+    color: #168653;
+}
+
+.status-pending {
+    background: #FFF3D9;
+    color: #B47B13;
+}
+
+.status-recovered {
+    background: #E4F0FF;
+    color: #3676C5;
+}
+
+.status-closed {
+    background: #ECEEF2;
+    color: #687080;
+}
+
+/* =================================
+   SEARCH AND FILTERS
+================================= */
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    background: white;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 25px;
+}
+
+.search-box input,
+.search-box select {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    border-color: var(--primary);
+}
+
+/* =================================
+   FORMS AND AUTHENTICATION
+================================= */
+
+.auth-section {
+    min-height: 75vh;
+    display: grid;
+    place-items: center;
+    padding: 45px 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    background: white;
+    padding: 38px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.auth-card h2 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.auth-card > p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-submit {
+    width: 100%;
+}
+
+/* =================================
+   DASHBOARD
+================================= */
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin-top: 7px;
+}
+
+/* =================================
+   HOW IT WORKS
+================================= */
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.step-card {
+    padding: 28px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.step-icon {
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.step-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.step-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =================================
+   FLASH MESSAGES
+================================= */
+
+.flash-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 28px;
+}
+
+.flash-message {
+    padding: 13px 17px;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.flash-message.success {
+    background: #E3F7ED;
+    color: #168653;
+}
+
+.flash-message.error,
+.flash-message.danger {
+    background: #FDEBEC;
+    color: #CF3E49;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    background: #20243A;
+    color: white;
+    padding: 45px 25px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.footer p {
+    color: #C0C4D2;
+    font-size: 13px;
+}
+
+.footer-copy {
+    margin-top: 22px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 14px 18px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 22px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-actions .btn {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 55px 18px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-visual {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 30px 16px;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 24px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .auth-card {
+        padding: 25px 20px;
+    }
+}
+
+/* =================================
+   FINDORA AUTH PAGE ENHANCEMENTS
+================================= */
+
+.auth-brand {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-brand .logo-icon {
+    margin: 0 auto 15px;
+}
+
+.auth-brand h2 {
+    margin-bottom: 8px;
+}
+
+.auth-brand p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.auth-card h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.auth-card h3 + p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.auth-switch {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 18px;
+}
+
+.auth-switch a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+.auth-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 35px 0;
+}
+
+#login,
+#register {
+    scroll-margin-top: 100px;
+}
+
+/* =================================
+   FINDORA ITEMS PAGE
+================================= */
+
+.items-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.items-page-header h1 {
+    font-size: 32px;
+    margin: 12px 0 8px;
+}
+
+.items-page-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.items-filter-form {
+    margin-bottom: 35px;
+}
+
+.items-filter-form .search-box {
+    align-items: center;
+    margin-bottom: 0;
+    box-shadow: var(--shadow);
+}
+
+.items-list-heading {
+    margin-bottom: 22px;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details .btn {
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: white;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 55px 20px;
+}
+
+.empty-state div {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.empty-state h3 {
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* Items page responsive design */
+@media (max-width: 768px) {
+    .items-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .items-page-header h1 {
+        font-size: 27px;
+    }
+
+    .items-filter-form .search-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* =================================
+   FINDORA STUDENT DASHBOARD
+================================= */
+
+.dashboard-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0 40px;
+}
+
+.dashboard-header p {
+    margin-top: 8px;
+}
+
+.claims-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.claim-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.claim-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.claim-card p {
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .dashboard-actions {
+        flex-direction: column;
+    }
+
+    .dashboard-actions .btn {
+        width: 100%;
+    }
+
+    .claim-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

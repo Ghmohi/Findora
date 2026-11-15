@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Findora | Lost & Found{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="/" class="logo">
+                <span class="logo-icon">F</span>
+                <span>Findora</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="/items">Browse Items</a>
+                <a href="/dashboard">Dashboard</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Sign Up</a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Flash Messages -->
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <!-- Individual Page Content -->
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Findora</h3>
+            <p>Lost something? Found something? Let's reunite it.</p>
+            <p class="footer-copy">
+                © 2026 Findora. College Lost and Found Management System.
+            </p>
+        </div>
+    </footer>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>

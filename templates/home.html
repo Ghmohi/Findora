@@ -1,0 +1,178 @@
+
+{% extends "base.html" %}
+
+{% block title %}Findora | Find What's Lost{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div>
+            <span class="hero-tag">🎓 YOUR CAMPUS LOST & FOUND HUB</span>
+
+            <h1>
+                Lost something?
+                <br>
+                <span>Let's find it.</span>
+            </h1>
+
+            <p>
+                Findora helps students report lost belongings,
+                discover found items, and reunite people with
+                the things that matter to them.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/report?type=lost" class="btn btn-primary">
+                    Report Lost Item →
+                </a>
+
+                <a href="/report?type=found" class="btn btn-outline">
+                    Report Found Item
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-emoji">🎒 🔍</div>
+            <h3>Every lost item has a way home.</h3>
+            <p class="text-muted">
+                Making campus life easier, one reunion at a time.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="container section">
+
+    <div class="section-heading text-center">
+        <h2>How Findora Works</h2>
+        <p>Three simple steps to reunite lost belongings with their owners.</p>
+    </div>
+
+    <div class="steps-grid">
+
+        <div class="step-card">
+            <div class="step-icon">📝</div>
+            <h3>1. Report an Item</h3>
+            <p>
+                Lost or found something on campus?
+                Submit its details through Findora.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">🔎</div>
+            <h3>2. Search and Discover</h3>
+            <p>
+                Browse reported items and use search
+                and filters to find a possible match.
+            </p>
+        </div>
+
+        <div class="step-card">
+            <div class="step-icon">🤝</div>
+            <h3>3. Claim and Reunite</h3>
+            <p>
+                Submit a claim and verify ownership
+                to get your belongings back.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RECENT ITEMS -->
+<section class="container section">
+
+    <div class="section-heading">
+        <h2>Recently Reported Items</h2>
+        <p>Explore some of the latest lost and found reports.</p>
+    </div>
+
+    <div class="items-grid">
+
+        <div class="item-card">
+            <div class="item-image">🎧</div>
+            <div class="item-details">
+                <span class="status-badge status-found">Found</span>
+                <h3>Wireless Headphones</h3>
+                <p>📍 College Library</p>
+                <p>Recently reported</p>
+                <a href="/items" class="btn btn-outline">
+                    View Details
+                </a>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-image">📱</div>
+            <div class="item-details">
+                <span class="status-badge status-lost">Lost</span>
+                <h3>Mobile Phone</h3>
+                <p>📍 Classroom Block</p>
+                <p>Recently reported</p>
+                <a href="/items" class="btn btn-outline">
+                    View Details
+                </a>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-image">🎒</div>
+            <div class="item-details">
+                <span class="status-badge status-found">Found</span>
+                <h3>Blue Backpack</h3>
+                <p>📍 College Cafeteria</p>
+                <p>Recently reported</p>
+                <a href="/items" class="btn btn-outline">
+                    View Details
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center" style="margin-top: 30px;">
+        <a href="/items" class="btn btn-primary">
+            Browse All Items →
+        </a>
+    </div>
+
+</section>
+
+
+<!-- CALL TO ACTION -->
+<section class="container section">
+    <div style="
+        background: #EEEDFF;
+        padding: 45px 25px;
+        border-radius: 18px;
+        text-align: center;
+    ">
+        <h2>Be a part of the Findora community!</h2>
+
+        <p style="
+            color: #777D91;
+            margin: 12px auto 22px;
+            max-width: 550px;
+        ">
+            Your small action can help someone find something
+            important. Report an item and make a difference
+            on your campus.
+        </p>
+
+        <a href="/items" class="btn btn-primary">
+            Explore Findora →
+        </a>
+    </div>
+</section>
+
+{% endblock %}
